@@ -110,7 +110,7 @@ function simpleAsyncSearch(url, inputId) {
             console.log(data);
             $("#student_list").show();
             $("#student_list").html(data);
-            //removeSearchBarLoader('line');
+            removeSearchBarLoader('line');
         }
     });
 }

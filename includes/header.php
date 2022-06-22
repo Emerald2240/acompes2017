@@ -35,7 +35,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown dropdown-submenu dropend"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "student_search"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Student Search</a>
+                                    <li class="dropdown dropdown-submenu dropend" data-bs-dismiss="offcanvas" aria-label="Close"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "student_search"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Student Search</a>
                                     </li>
                                 </ul>
                             </li>
@@ -126,8 +126,8 @@
             <div class="widget mb-8">
                 <h4 class="widget-title text-white mb-3">Contact Info</h4>
                 <address> Moonshine St. 14/05 <br /> Opposite Nnamdi Azikiwe Stadium, Enugu </address>
-<a href="admin@techac.net"></a>
-              </div>
+                <a href="admin@techac.net"></a>
+            </div>
             <!-- /.widget -->
             <div class="widget mb-8">
                 <h4 class="widget-title text-white mb-3">Learn More</h4>

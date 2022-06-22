@@ -60,35 +60,46 @@ switch ($_POST) {
                 }
             }
             //  }
-        } else {
-            $wordsAry = explode(" ", $_POST['keyword']);
-            $wordsCount = count($wordsAry);
-            for ($i = 0; $i < $wordsCount; $i++) {
-
-                $queryCondition = "WHERE reg_no LIKE '%" . $wordsAry[$i] . "%' OR reg_no LIKE '%" . $wordsAry[$i] . "%' ";
-
-                if ($i != $wordsCount - 1) {
-                    $queryCondition .= " OR ";
-                }
-            }
-        }
 
 
 
-        $orderby = " ORDER BY id desc";
-        //echo $queryCondition;
-        $query = "SELECT * FROM students " . $queryCondition . $orderby . " LIMIT 0,6";
-        $result = $db_handle->runQuery($query);
-        if (!empty($result)) { ?>
-            <!-- <ul id="student-list"> -->
-            <?php
-            foreach ($result as $student) {
-                $fullName = $student['first_name'] . " ". $student['last_name']." ".$student['middle_name'];
-            ?>
-                <li onclick='loadNewPage("functions/testAjax.php", <?= json_encode($student); ?>)' class="student_item"><?php echo $student["reg_no"]; ?></li>
-            <?php } ?>
-            <!-- </ul> -->
-<?php }
+
+
+
+            $orderby = " ORDER BY id desc";
+            //echo $queryCondition;
+            $query = "SELECT * FROM students " . $queryCondition . $orderby . " LIMIT 0,6";
+            $result = $db_handle->runQuery($query);
+            if (!empty($result)) { ?>
+                <!-- <ul id="student-list"> -->
+                <?php
+                foreach ($result as $student) {
+                    $fullName = $student['first_name'] . " ". $student['last_name']." ".$student['middle_name'];
+                ?>
+                    <li onclick='loadNewPage("functions/testAjax.php", <?= json_encode($student); ?>)' class="student_item"><?php echo $student["reg_no"]; ?></li>
+                <?php } ?>
+                <!-- </ul> -->
+    <?php }
+
+
+
+        } 
+        // else {
+        //     $wordsAry = explode(" ", $_POST['keyword']);
+        //     $wordsCount = count($wordsAry);
+        //     for ($i = 0; $i < $wordsCount; $i++) {
+
+        //         $queryCondition = "WHERE reg_no LIKE '%" . $wordsAry[$i] . "%' OR reg_no LIKE '%" . $wordsAry[$i] . "%' ";
+
+        //         if ($i != $wordsCount - 1) {
+        //             $queryCondition .= " OR ";
+        //         }
+        //     }
+        // }
+
+
+
+        
         break;
     default:
         # code...
