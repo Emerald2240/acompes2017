@@ -14,20 +14,58 @@
   </div>
   <!-- preloader end -->
 
-  <!-- modal start -->
   <div class="content-wrapper">
     <?php require_once('includes/header.php') ?>
+    <!-- modal start -->
     <div class="modal fade modal-popup" id="modal-02" tabindex="-1">
       <?php require_once('includes/mail_list_modal.php') ?>
     </div>
     <!--/.modal end-->
 
 
+
+
+
+
+
+    
+
+
+
+
+
     <!-- ///////////////////////////////////////////////////////////////  CENTRAL LOCATION START  ///////////////////////////////////////////////////////// -->
     <div id="central_content" class="mb-5">
-      <?php require_once('pages/home.php') ?>
+      <?php
+      if (isset($_GET['page'])) {
+        switch ($_GET['page']) {
+
+          case "student_search":
+            require_once('pages/student_search.php');
+            break;
+
+          default:
+            require_once('pages/home.php');
+            break;
+        }
+      } else {
+        require_once('pages/home.php');
+      }
+      ?>
     </div>
     <!-- ///////////////////////////////////////////////////////////////  CENTRAL LOCATION END  ///////////////////////////////////////////////////////////// -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   </div>
 
   <!-- footer start -->

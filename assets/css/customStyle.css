@@ -1,4 +1,4 @@
-.preloader {
+.preloader_animation {
     /* display: none; */
     position: fixed;
     top: 0;
@@ -11,6 +11,8 @@
     background-color: #fff;
     background-position: center;
 }
+
+
 
 #student_list {
     float: left;

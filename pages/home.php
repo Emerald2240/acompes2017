@@ -2,16 +2,16 @@
  <section class="wrapper bg-soft-primary">
      <div class="container pt-10 pb-15 pt-md-14 pb-md-20">
          <div class="row gx-lg-8 gx-xl-12 gy-10 mb-5 align-items-center">
-             <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start order-2 order-lg-0" data-cues="slideInDown" data-group="page-title" data-delay="600">
+             <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start order-2 order-lg-0" data-cues="slideInDon" data-group="page-title" data-delay="600">
                  <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">Fast. Simple. Electric.</h1>
                  <p class="lead fs-lg mb-7">The goal is to utilize the tools available to our generation to make things easier.</p>
-                 <div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+                 <div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDon" data-group="page-title-buttons" data-delay="900">
                      <span><a class="btn btn-primary rounded me-2">Documentation</a></span>
-                     <span><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "student_search"]); ?>)' class="btn btn-yellow rounded">Student Search</a></span>
+                     <span><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "#student_search"]); ?>)' class="btn btn-yellow rounded">Student Search</a></span>
                  </div>
              </div>
              <!-- /column -->
-             <div class="col-lg-7" data-cue="slideInDown">
+             <div class="col-lg-7" data-cue="slideInDon">
                  <figure><img class="w-auto" src="assets/img/illustrations/i6.png" srcset="./assets/img/illustrations/i6@2x.png 2x" alt="" /></figure>
              </div>
              <!-- /column -->

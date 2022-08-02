@@ -6,14 +6,6 @@
                 <div class="navbar-other ms-auto">
                     <ul class="navbar-nav flex-row align-items-center">
                         <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
-                        <li class="nav-item dropdown language-select text-uppercase">
-                            <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="dropdown-item" href="#">En</a></li>
-                                <li class="nav-item"><a class="dropdown-item" href="#">De</a></li>
-                                <li class="nav-item"><a class="dropdown-item" href="#">Es</a></li>
-                            </ul>
-                        </li>
                         <li class="nav-item d-lg-none">
                             <button class="hamburger offcanvas-nav-btn"><span></span></button>
                         </li>
@@ -35,7 +27,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown dropdown-submenu dropend" data-bs-dismiss="offcanvas" aria-label="Close"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "student_search"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Student Search</a>
+                                    <li class="dropdown dropdown-submenu dropend" data-bs-dismiss="offcanvas" aria-label="Close"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "#student_search"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Student Search</a>
                                     </li>
                                 </ul>
                             </li>
@@ -70,11 +62,11 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Documentation</a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown dropdown-submenu dropend"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "student_search"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Site Code</a>
+                                    <li class="dropdown dropdown-submenu dropend"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "#home"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Site Code</a>
                                     </li>
-                                    <li class="dropdown dropdown-submenu dropend"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "student_search"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Student Database</a>
+                                    <li class="dropdown dropdown-submenu dropend"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "#home"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Student Database</a>
                                     </li>
-                                    <li class="dropdown dropdown-submenu dropend"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "student_search"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Documentation</a>
+                                    <li class="dropdown dropdown-submenu dropend"><a onclick='loadNewPage("functions/ajax.php", <?= json_encode(["page" => "#home"]); ?>)' class="dropdown-item" href="#" data-bs-toggle="dropdown">Documentation</a>
                                     </li>
                                 </ul>
                             </li>

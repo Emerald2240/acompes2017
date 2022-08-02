@@ -17,22 +17,22 @@
 
                     </ul>
                     <!--/.accordion -->
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
-                <a onclick="setSearchBarLoader('line');" href="#">Set line loader</a>
+                <button onclick="setSearchBarLoader('line');">Set line loader</button>
             </div>
             <!-- /column -->
             <div class="col-lg-6" data-cue="slideInDon">

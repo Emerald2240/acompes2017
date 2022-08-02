@@ -1,6 +1,73 @@
+setLoader();
 $(window).on('load', function () {
     removeLoader();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+//new WOW().init();
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: "en"
+    }, 'google_translate_element');
+}
+
+function changeLanguageByButtonClick() {
+    var language = document.getElementById("language").value;
+    //var language = language.options[ language.selectedIndex ].value 
+    console.log(language);
+    language = 'ar';
+    var selectField = document.querySelector("#google_translate_element select");
+    //var selectField = $('#google_translate_element select')
+
+    console.log('mann!')
+    for (var i = 0; i < selectField.children.length; i++) {
+        console.log('inside loop');
+        var option = selectField.children[i];
+        // find desired langauge and change the former language of the hidden selection-field 
+        if (option.value == language) {
+            console.log('setting language');
+            selectField.selectedIndex = i;
+            // trigger change event afterwards to make google-lib translate this side
+            selectField.dispatchEvent(new Event('change'));
+            break;
+        }
+    }
+    console.log('outside loop');
+}
+
+
+
+
+
+
+
+
+
+
+
+var currentPageHash = window.location.hash;
+
+setInterval(function () {
+    if (window.location.hash != currentPageHash) {
+        console.log('current page hash is: ' + currentPageHash);
+        console.log('window hash is: ' + window.location.hash);
+        //window.alert('loading a new page in the set interval function. window hash: '+window.location.hash+' current hash: '+currentPageHash);
+        loadNewPage("functions/ajax.php", { "page": window.location.hash }, true);
+        currentPageHash = window.location.hash;
+    }
+}, 100);
 
 function removeLoader() {
     // $(".loader").animate({ opacity: '0.2' });
@@ -49,7 +116,7 @@ function setLoader() {
 
     // $('.loader').attr('style', 'display:block');
     // setTimeout(() => {
-    $('.preloader').show();
+    $('.preloader').addClass('preloader_animation');
     $(".preloader").animate({ opacity: '1' });
 
 
@@ -119,7 +186,10 @@ function doIt(url, dataRequest) {
     console.log(simpleAjaxPostRequest(url, dataRequest));
 }
 
-function loadNewPage(url, dataRequest) {
+function loadNewPage(url, dataRequest, dontTouchHash = null) {
+    //console.log('new page hash is: ' + newPageHash);
+    console.log('current page hash is: ' + currentPageHash);
+    console.log('window hash is: ' + window.location.hash);
     //dataRequest = JSON.parse(dataRequest);
     setLoader();
     //linkId = document.getElementById(linkId);
@@ -137,10 +207,18 @@ function loadNewPage(url, dataRequest) {
                 $("#central_content").html(data);
             });
             $('#central_content').fadeIn();
+
+            if (dontTouchHash) {
+
+            } else {
+                window.location.hash = dataRequest.page;
+            }
+            currentPageHash = window.location.hash;
+            //window.history.pushState({}, "Backpage", "http://localhost/acompes2017/test.php");
             // $('p').append('status: ' + status + ', data: ' + data);
         });
 
-    //removeLoader();
+    removeLoader();
     //scrollToElement('dashboardPage');
 }
 
@@ -154,3 +232,15 @@ function removeSearchBarLoader(elementId) {
     elementId = document.getElementById(elementId);
     $(elementId).removeClass('line');
 }
+
+// $(window).on("navigate", function (event, data) {
+//     var direction = data.state.direction;
+//     if (direction == 'back') {
+//         // Do something
+//         window.alert('back');
+//     }
+//     if (direction == 'forward') {
+//         // Do something else
+//         window.alert('forward');
+//     }
+// });
